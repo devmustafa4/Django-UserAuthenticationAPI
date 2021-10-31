@@ -5,14 +5,17 @@
     </head>
     <body>
         <h1> Site Home</h1>
-        <p style="margin-left: 2.5em;padding: 0 7em 2em 0;border-width: 2px;">Hi there, there is nothing to show here but you can register or sign in if you like :p<br>
-        It will allow you to login and see your name with a hello attached to it xD.
+        <p style="margin-left: 2.5em;padding: 0 7em 2em 0;border-width: 2px;">Hi there, This is the home page of this website
         <br>
-        <br>
-        Click <a href = "\login">here</a> if you want to login.
-        <br>
-        Click <a href="\register">here</a> if you want to create a new account.
         </p>
-
+        {% if user.is_authenticated %}
+            <p> Hey {{user.username}}, click <a href = "\logout">here</a> if you want to logout.</p>
+        {% else %}
+            <p>
+            Click <a href = "\login">here</a> if you want to login.
+            <br>
+            Click <a href="\register">here</a> if you want to create a new account.
+            </p>
+        {% endif %}
     </body>
 </html>

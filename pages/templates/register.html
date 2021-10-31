@@ -1,6 +1,10 @@
+
+{% load crispy_forms_tags %}
+
 <h1>Register!!!</h1>
+
 <form method="post" class="form-group">
     {% csrf_token %}
-    {{form}}
+    {{form|crispy}}
     <button type="submit" class="btn btn-success">Register</button>
 </form>

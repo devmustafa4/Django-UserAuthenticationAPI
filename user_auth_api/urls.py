@@ -20,7 +20,9 @@ from pages.views import home_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', custom_page_views.home_view, name='home'),
     path('home/', custom_page_views.home_view, name='home'),
-    path('register/', custom_page_views.register, name="register")
+    path('register/', custom_page_views.register, name="register"),
+    path('', custom_page_views.home_view, name='home'),
+    path('', include("django.contrib.auth.urls"))
+    
 ]
